@@ -10,12 +10,16 @@ package Chim;
  * @author Le Duc Hoa
  */
 public class ChimChet {
-    private MyChim mychim = new MyChim();
+    private final MyChim mychim = new MyChim();
+    
+    /*Chim rot xuong dat -> chim chet*/
     public boolean chimchet(){
         
-        if(mychim.y + 50 >= 450){
+        if(mychim.y >= 480 - 40 || mychim.y <= 15){
             return true;
         }
+        
+       
         
         return false;
                 

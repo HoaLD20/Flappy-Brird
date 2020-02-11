@@ -1,26 +1,20 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ *
+ * @author Le Duc Hoa
  */
 package Chim;
 
-import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.nio.Buffer;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
-/**
- *
- * @author Le Duc Hoa
- */
+
 public class OngCong extends JPanel {
 
     /*set x for each ong cong*/
@@ -85,24 +79,24 @@ public class OngCong extends JPanel {
     public void randomHeight() {
         Random rd = new Random();
         if (pause1 == false) {
-            h1 = rd.nextInt(200);
+            h1 = rd.nextInt(350);
             pause1 = true;
         }
         if (pause2 == false) {
-            h2 = rd.nextInt(200);
+            h2 = rd.nextInt(350);
             pause2 = true;
         }
         if (pause3 == false) {
-            h3 = rd.nextInt(200);
+            h3 = rd.nextInt(350);
             pause3 = true;
         }
         if (pause4 == false) {
-            h4 = rd.nextInt(200);
+            h4 = rd.nextInt(350);
             pause4 = true;
 
         }
         if (pause5 == false) {
-            h5 = rd.nextInt(200);
+            h5 = rd.nextInt(350);
             pause5 = true;
         }
     }
@@ -115,15 +109,18 @@ public class OngCong extends JPanel {
             ongcongduoi = ImageIO.read(new File("./src/UI/Ongnuocduoi.png"));
 
             /**
-             * x, y, r, d x| | | | | | | | |______| y
+             * x1: toa do x
+             * - : toa do y
+             * - : chieu rong ong cong
+             * - : chieu dai ong cong
              */
             /*Ong cong 1*/
-            g.drawImage(ongcongtren, x1, 0, 100, h1, null);
-            g.drawImage(ongcongduoi, x1, h1 + 300, 100, 400, null);
+            g.drawImage(ongcongtren, x1, -250, 100, h1 + 200, null);
+            g.drawImage(ongcongduoi, x1, h1 + 100, 100, 600, null);
 
             /*Ong cong 2*/
-            g.drawImage(ongcongtren, x2, 0, 100, h1, null);
-            g.drawImage(ongcongduoi, x2, h2 + 300, 100, 400, null);
+            g.drawImage(ongcongtren, x2, -250, 100, h2 + 150, null);
+            g.drawImage(ongcongduoi, x2, h2 + 100, 100, 600, null);
 
             /*Ong cong 3*/
 //            g.setColor(Color.green);
@@ -131,16 +128,16 @@ public class OngCong extends JPanel {
 //            
 //            g.setColor(Color.green);
 //            g.fillRect(x3, h3 + 300, 100, 400);
-            g.drawImage(ongcongtren, x3, 0, 100, h3, null);
-            g.drawImage(ongcongduoi, x3, h3 + 300, 100, 400, null);
+            g.drawImage(ongcongtren, x3, -250, 100, h3 + 200, null);
+            g.drawImage(ongcongduoi, x3, h3 + 100, 100, 600, null);
 
             /*Ong cong 4*/
-            g.drawImage(ongcongtren, x4, 0, 100, h4, null);
-            g.drawImage(ongcongduoi, x4, h4 + 300, 100, 400, null);
+            g.drawImage(ongcongtren, x4, -250, 100, h4 + 150, null);
+            g.drawImage(ongcongduoi, x4, h4 + 100, 100, 600, null);
 
             /*Ong cong 5*/
-            g.drawImage(ongcongtren, x5, 0, 100, h5, null);
-            g.drawImage(ongcongduoi, x5, h5 + 300, 100, 400, null);
+            g.drawImage(ongcongtren, x5, -250, 100, h5 + 200, null);
+            g.drawImage(ongcongduoi, x5, h5 + 100, 100, 600, null);
         } catch (IOException ex) {
             Logger.getLogger(OngCong.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -157,23 +154,23 @@ public class OngCong extends JPanel {
 
     public void repeatOngcong() {
         if (x1 == -100) {
-            x1 = 1000;
+            x1 = 1100;
             pause1 = false;
         }
         if (x2 == -100) {
-            x2 = 1000;
+            x2 = 1100;
             pause2 = false;
         }
         if (x3 == -100) {
-            x3 = 1000;
+            x3 = 1100;
             pause3 = false;
         }
         if (x4 == -100) {
-            x4 = 1000;
+            x4 = 1100;
             pause4 = false;
         }
         if (x5 == -100) {
-            x5 = 1000;
+            x5 = 1100;
             pause5 = false;
         }
     }

@@ -8,7 +8,6 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.time.format.FormatStyle;
 import javax.swing.JFrame;
 
 
@@ -31,14 +30,14 @@ public class Screen extends JFrame{
     public Screen(){
         setSize(1000, 600);
         setVisible(true);
-        //setResizable(false);
+        setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocation(400, 250);
         add(draw);
         
+        /*Nhan gia tri tu ban phim*/
         addKeyListener(new KeyAdapter(){
 
-            /*Nhan gia tri tu ban phim*/
             @Override
             public void keyPressed(KeyEvent e) {
                 mychim.baylen();
@@ -46,6 +45,7 @@ public class Screen extends JFrame{
             }
             
         });
+        /*Nhan tin hieu tu chuot*/
         addMouseListener(new MouseAdapter() {
 
             @Override
@@ -58,7 +58,10 @@ public class Screen extends JFrame{
         
        
     }
+    
+    /**/
     public static void main(String[] args) {
         Screen screen = new Screen();
+        Draw.sound("D:\\Dengue Fever - Integration.mp3");
     }
 }
